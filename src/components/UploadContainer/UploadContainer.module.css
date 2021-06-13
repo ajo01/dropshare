@@ -1,6 +1,7 @@
 :root {
   --border-color: #0288d147;
   --sub-color: #2196f3;
+  --error: #ff4a4a;
 }
 
 .upload_container,
@@ -13,7 +14,7 @@
 .upload_container {
   background: white;
   border-radius: 25px;
-  box-shadow: 0 20px 20px rgba(79, 79, 79, 0.2);
+  box-shadow: 0 20px 20px rgba(79, 79, 79, 0.25);
   flex-direction: column;
 }
 
@@ -27,49 +28,52 @@
   transition: all 0.4s ease;
 }
 
-.icon_container {
-  width: 75px;
-  height: 100px;
-  position: relative;
-}
-
-.icon_container img {
-  width: 75px;
-  position: absolute;
-  transform-origin: bottom;
-  transition: transform 0.6s ease-in-out;
-}
-
-.icon_container .center {
-  z-index: 2;
-}
-
-.icon_container .right,
-.icon_container .left {
-  filter: grayscale(0.5);
-  transform: scale(0.9);
-}
-
 .drop_zone:hover {
   background: var(--main-bg-color);
   border-color: var(--sub-color);
 }
 
-.drop_zone:hover .center {
-  transform: translateY(-5px);
-}
-.drop_zone:hover .right {
-  transform: rotate(10deg) scale(0.9) translateX(20px);
-}
-.drop_zone:hover .left {
-  transform: rotate(-10deg) scale(0.9) translateX(-20px);
+
+label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
 }
 
-#fileinput {
-    display: none;
-  }
+label {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  line-height: 50px;
+  color: var(--border-color);
+  font-weight: bold;
+  font-size: 28px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 
-.browseBtn {
-  color: var(--sub-color);
-  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+label:hover {
+  background: var(--sub-color);
+  color: white;
+}
+
+.output {
+  height: 60px;
+  font-size: 0.8rem;
+}
+.error {
+  color: var(--error);
+  margin-top: 80px;
+}
+
+.fileName{
+    margin-top: 80px;
 }

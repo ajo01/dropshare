@@ -1,33 +1,37 @@
-import React from "react";
-import fileImg from '../../img/file.svg'
-import styles from './UploadContainer.module.css'
+import React, { useState } from "react";
+import styles from "./UploadContainer.module.css";
 
 const UploadContainer = () => {
+  const [file, setFile] = useState(null);
+  const [error, setError] = useState("");
+
+  // allowed file types. change later
+  const types = ["image/png", "image/jpeg"];
+
+  const changeHandler = (e) => {
+    let selected = e.target.files[0];
+
+    if (selected && types.includes(selected.type)) {
+      setFile(selected);
+      setError("");
+      console.log(selected)
+    } else {
+      setFile(null);
+      setError("Please select a png or jpeg image file");
+    }
+  };
+
   return (
     <section className={styles.upload_container}>
-      <div class={styles.drop_zone}>
-        <div class={styles.icon_container}>
-          <img
-            src={fileImg}
-            alt="file-icon"
-            class={styles.center}
-            draggable="false"
-          />
-          <img
-            src={fileImg}
-            alt="file-icon"
-            class={styles.left}
-            draggable="false"
-          />
-          <img
-            src={fileImg}
-            alt="file-icon"
-            class={styles.right}
-            draggable="false"
-          />
+      <div className={styles.drop_zone}>
+        <label>
+          <input type="file" id={styles.fileinput} onChange={changeHandler} />
+          <span>+</span>
+        </label>
+        <div className={styles.output}>
+          {error && <div className={styles.error}>{error}</div>}
+          {file && <div className={styles.fileName}>{file.name}</div>}
         </div>
-        <input type="file" id={styles.fileinput}/>
-        <div class="title">Drop your files here or <span class={styles.browseBtn}>browse</span></div>
       </div>
     </section>
   );
