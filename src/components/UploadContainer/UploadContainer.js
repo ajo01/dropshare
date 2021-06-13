@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./UploadContainer.module.css";
+import ProgressBar from '../ProgressBar/ProgressBar'
 
 const UploadContainer = () => {
   const [file, setFile] = useState(null);
@@ -43,6 +44,7 @@ const UploadContainer = () => {
           <span>+</span>
         </label>
         <div className={styles.output}>{renderOutput()}</div>
+        {file && <ProgressBar file={file} setFile={setFile}/>}
       </div>
     </section>
   );
