@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 :root {
   --main-bg-color: #eff5fe;
 }
@@ -9,6 +11,7 @@ html {
   align-items: center;
   justify-content: center;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .center {
