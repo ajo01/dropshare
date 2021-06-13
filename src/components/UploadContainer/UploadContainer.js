@@ -14,7 +14,7 @@ const UploadContainer = () => {
     if (selected && types.includes(selected.type)) {
       setFile(selected);
       setError("");
-      console.log(selected)
+      console.log(selected);
     } else {
       setFile(null);
       setError("Please select a png or jpeg image file");
@@ -29,8 +29,11 @@ const UploadContainer = () => {
           <span>+</span>
         </label>
         <div className={styles.output}>
-          {error && <div className={styles.error}>{error}</div>}
-          {file && <div className={styles.fileName}>{file.name}</div>}
+          {file ? (
+            <div className={styles.fileName}>{file.name}</div>
+          ) : (
+            <div className={styles.error}>{error}</div>
+          )}
         </div>
       </div>
     </section>
