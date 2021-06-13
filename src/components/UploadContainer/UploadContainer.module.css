@@ -19,7 +19,7 @@
 }
 
 .drop_zone {
-  width: 500px;
+  width: var(--container-width);
   min-height: 200px;
   border: 2px dashed var(--border-color);
   margin: 30px;
@@ -55,14 +55,12 @@ label {
 
   margin: 0;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 label:hover {
   background: var(--sub-color);
   color: white;
+  transition: .3s ease-in-out;
 }
 
 .output {
@@ -76,4 +74,13 @@ label:hover {
 
 .fileName{
     margin-top: 80px;
+}
+
+.progress_container{
+  width: var(--container-width);
+  height: 70px;
+  border: 2px solid rgb(197, 196, 209);
+  border-radius: 10px;
+  margin-bottom: 25px;
+  position: relative;
 }

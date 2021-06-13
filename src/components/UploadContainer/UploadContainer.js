@@ -31,10 +31,21 @@ const UploadContainer = () => {
     return file ? (
       <>
         <div className={styles.fileName}>{file.name}</div>
-        <ProgressBar file={file} setFile={setFile} />
       </>
     ) : (
       <div className={styles.error}>{error}</div>
+    );
+  };
+
+  const renderProgress = () => {
+    return (
+      <div className={styles.progress_container}>
+        <ProgressBar
+          className={styles.progress}
+          file={file}
+          setFile={setFile}
+        />
+      </div>
     );
   };
 
@@ -47,6 +58,8 @@ const UploadContainer = () => {
         </label>
         <div className={styles.output}>{renderOutput()}</div>
       </div>
+      {file && renderProgress()}
+      {/* {renderProgress()} */}
     </section>
   );
 };

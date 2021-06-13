@@ -1,5 +1,6 @@
 .progress_bar {
-  height: 20px;
+  height: 70px;
   background: var(--border-color);
   padding: 5px;
+  text-align: center;
 }
