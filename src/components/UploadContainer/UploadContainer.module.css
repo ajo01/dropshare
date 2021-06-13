@@ -37,7 +37,7 @@
   width: 75px;
   position: absolute;
   transform-origin: bottom;
-  transition: transform .8s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
 .icon_container .center {
@@ -63,4 +63,13 @@
 }
 .drop_zone:hover .left {
   transform: rotate(-10deg) scale(0.9) translateX(-20px);
+}
+
+#fileinput {
+    display: none;
+  }
+
+.browseBtn {
+  color: var(--sub-color);
+  cursor: pointer;
 }

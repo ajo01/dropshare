@@ -26,6 +26,8 @@ const UploadContainer = () => {
             draggable="false"
           />
         </div>
+        <input type="file" id={styles.fileinput}/>
+        <div class="title">Drop your files here or <span class={styles.browseBtn}>browse</span></div>
       </div>
     </section>
   );
