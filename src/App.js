@@ -4,7 +4,7 @@ import UploadContainer from './components/UploadContainer/UploadContainer'
 
 function App() {
     return (
-        <div>
+        <div className="center">
             <UploadContainer/>
         </div>
     )
