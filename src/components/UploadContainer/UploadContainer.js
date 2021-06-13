@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./UploadContainer.module.css";
-import ProgressBar from '../ProgressBar/ProgressBar'
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 const UploadContainer = () => {
   const [file, setFile] = useState(null);
@@ -16,7 +16,6 @@ const UploadContainer = () => {
     if (selected && types.includes(selected.type)) {
       setFile(selected);
       setError("");
-      console.log(selected);
     } else {
       setFile(null);
       setError("Please select a png or jpeg image file");
@@ -30,7 +29,10 @@ const UploadContainer = () => {
     }
 
     return file ? (
-      <div className={styles.fileName}>{file.name}</div>
+      <>
+        <div className={styles.fileName}>{file.name}</div>
+        <ProgressBar file={file} setFile={setFile} />
+      </>
     ) : (
       <div className={styles.error}>{error}</div>
     );
@@ -44,7 +46,6 @@ const UploadContainer = () => {
           <span>+</span>
         </label>
         <div className={styles.output}>{renderOutput()}</div>
-        {file && <ProgressBar file={file} setFile={setFile}/>}
       </div>
     </section>
   );
