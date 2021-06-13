@@ -4,6 +4,7 @@ import styles from "./UploadContainer.module.css";
 const UploadContainer = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
+  const [initial, setInitial] = useState(true);
 
   // allowed file types. change later
   const types = ["image/png", "image/jpeg"];
@@ -19,6 +20,7 @@ const UploadContainer = () => {
       setFile(null);
       setError("Please select a png or jpeg image file");
     }
+    setInitial(false);
   };
 
   return (
@@ -29,11 +31,12 @@ const UploadContainer = () => {
           <span>+</span>
         </label>
         <div className={styles.output}>
-          {file ? (
+        {initial ? (<div className={styles.fileName}>Upload a file</div>) : [file ? (
             <div className={styles.fileName}>{file.name}</div>
           ) : (
             <div className={styles.error}>{error}</div>
-          )}
+          )]}
+         
         </div>
       </div>
     </section>
