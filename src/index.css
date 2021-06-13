@@ -1,0 +1,12 @@
+:root {
+    --main-bg-color: #eff5fe;
+}
+
+body,
+html {
+    background: var(--main-bg-color);
+}
+
+.App{
+    margin: 0 auto;
+  }
