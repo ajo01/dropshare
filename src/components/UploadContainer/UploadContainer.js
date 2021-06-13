@@ -23,6 +23,18 @@ const UploadContainer = () => {
     setInitial(false);
   };
 
+  const renderOutput = () => {
+    if (initial) {
+      return <div className={styles.fileName}>Upload a file</div>;
+    }
+
+    return file ? (
+      <div className={styles.fileName}>{file.name}</div>
+    ) : (
+      <div className={styles.error}>{error}</div>
+    );
+  };
+
   return (
     <section className={styles.upload_container}>
       <div className={styles.drop_zone}>
@@ -30,14 +42,7 @@ const UploadContainer = () => {
           <input type="file" id={styles.fileinput} onChange={changeHandler} />
           <span>+</span>
         </label>
-        <div className={styles.output}>
-        {initial ? (<div className={styles.fileName}>Upload a file</div>) : [file ? (
-            <div className={styles.fileName}>{file.name}</div>
-          ) : (
-            <div className={styles.error}>{error}</div>
-          )]}
-         
-        </div>
+        <div className={styles.output}>{renderOutput()}</div>
       </div>
     </section>
   );
