@@ -25,7 +25,7 @@ const UploadContainer = () => {
 
   const renderOutput = () => {
     if (initial) {
-      return <div className={styles.fileName}>Upload a file</div>;
+      return <div className={styles.fileInstruction}>Upload a file</div>;
     }
 
     return file ? (

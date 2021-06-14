@@ -70,16 +70,24 @@
 .error {
   color: var(--error);
   margin-top: 80px;
+  font-size: 24px;
+}
+
+.fileInstruction{
+  margin: 80px 20px 0 20px;
+  font-size: 24px;
 }
 
 .fileName{
-    margin: 80px 20px 0 20px;
+  margin: 80px 20px 0 20px;
+  font-size: 14px;
 }
 
 .progress_container{
+  background: var(--main-bg-color);
   width: var(--container-width);
   height: 70px;
-  border: 2px solid rgb(197, 196, 209);
+  border: 2px solid rgb(228, 233, 250);
   border-radius: 10px;
   margin-bottom: 25px;
   position: relative;
