@@ -1,0 +1,7 @@
+.toast{
+    position: absolute;
+    border-radius: 10px;
+    background: blue;
+    color: white;
+    padding: 10px 20px;
+}

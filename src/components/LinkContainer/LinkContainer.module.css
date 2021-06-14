@@ -6,7 +6,7 @@
 .linkContainer{
   background: var(--main-bg-color);
   width: var(--container-width);
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
   border: 2px dashed var(--border-color);
