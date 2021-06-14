@@ -56,6 +56,7 @@ const UploadContainer = () => {
         <div className={styles.output}>{renderOutput()}</div>
       </div>
       {file && renderProgress()}
+      {/* {renderProgress()} */}
     </section>
   );
 };
