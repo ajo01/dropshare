@@ -29,9 +29,7 @@ const UploadContainer = () => {
     }
 
     return file ? (
-      <>
         <div className={styles.fileName}>{file.name}</div>
-      </>
     ) : (
       <div className={styles.error}>{error}</div>
     );
@@ -41,7 +39,6 @@ const UploadContainer = () => {
     return (
       <div className={styles.progress_container}>
         <ProgressBar
-          className={styles.progress}
           file={file}
           setFile={setFile}
         />
@@ -52,14 +49,13 @@ const UploadContainer = () => {
   return (
     <section className={styles.upload_container}>
       <div className={styles.drop_zone}>
-        <label>
+        <label className={styles.plusBtn}>
           <input type="file" id={styles.fileinput} onChange={changeHandler} />
           <span>+</span>
         </label>
         <div className={styles.output}>{renderOutput()}</div>
       </div>
       {file && renderProgress()}
-      {/* {renderProgress()} */}
     </section>
   );
 };
