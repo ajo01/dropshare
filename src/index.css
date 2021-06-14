@@ -27,3 +27,9 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.background-image{
+  height: 50vh;
+  width: 50vh;
+  background-size: contain;
+}
