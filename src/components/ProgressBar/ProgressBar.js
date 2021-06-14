@@ -13,11 +13,11 @@ const ProgressBar = ({ file, setFile }) => {
 
   return (
     <>
-      <label className={styles.progressLabel}>Uploading...</label>
+      <label className={styles.progressLabel}>Uploading... <span>{progress + "%" }</span></label>
       <motion.div
         className={styles.progress_bar}
         initial={{ width: 0 }}
-        animate={{ width: progress / 1.1 + "%" }}
+        animate={{ width: progress * 4.5}}
      />
     </>
   );
