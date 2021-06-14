@@ -1,3 +1,13 @@
-linkContainer{
-    background: red;
+.container{
+    text-align: center;
+}
+
+.linkContainer{
+  background: var(--main-bg-color);
+  width: var(--container-width);
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px dashed var(--border-color);
+  color: grey;
 }

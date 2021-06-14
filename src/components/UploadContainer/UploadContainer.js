@@ -58,6 +58,7 @@ const UploadContainer = () => {
         <div className={styles.output}>{renderOutput()}</div>
       </div>
       {file && renderProgress()}
+      <LinkContainer/>
       {/* <LinkContainer url={url}/> */}
     </section>
   );
