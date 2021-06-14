@@ -18,7 +18,7 @@ const ProgressBar = ({ file, setFile, setUrl }) => {
       <motion.div
         className={styles.progress_bar}
         initial={{ width: 0 }}
-        animate={{ width: progress * 4.5}}
+        animate={{ width: progress * 4}}
      />
     </>
   );

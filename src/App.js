@@ -5,8 +5,8 @@ import BackgroundImg from './img/background.svg'
 function App() {
     return (
         <div className="center">
-            <UploadContainer/>
-            <img className="background-image" src={BackgroundImg} alt="background image"></img>
+            <UploadContainer className="upload-box"/>
+            {/* <img className="background-image" src={BackgroundImg} alt="background image"></img> */}
         </div>
     )
 }

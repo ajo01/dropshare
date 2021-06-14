@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./LinkContainer.module.css";
 import copyIcon from "../../img/copy-icon.svg";
 import TinyURL from "tinyurl";
@@ -16,7 +16,7 @@ const LinkContainer = ({ url }) => {
       <br />
       <div className={styles.linkContainer}>
         <label>{url}</label>
-        <img src={copyIcon} alt="copy-icon"></img>
+        <img src={copyIcon} alt="copy-icon" onClick={() => {navigator.clipboard.writeText(url)}}></img>
       </div>
     </div>
   );
