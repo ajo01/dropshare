@@ -10,7 +10,7 @@ const ProgressBar = ({ file, setFile, setUrl }) => {
       setFile(null);
       setUrl(url)
     }
-  }, [url, setFile]);
+  }, [url, setFile, setUrl]);
 
   return (
     <>

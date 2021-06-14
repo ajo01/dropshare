@@ -11,3 +11,10 @@
   border-radius: 10px;
   border: 2px dashed var(--border-color);
 }
+
+.linkContainer img {
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+    cursor: pointer;
+}

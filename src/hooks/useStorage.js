@@ -22,7 +22,7 @@ const useStorage = (file) => {
         collectionRef.add({fileName, url, createdAt})
         setUrl(url)
       })
-  }, [file])
+  }, [file, setUrl])
   return {progress, url, error}
 };
 
