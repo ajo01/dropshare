@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import styles from "./UploadContainer.module.css";
 import ProgressBar from "../ProgressBar/ProgressBar";
+import LinkContainer from '../LinkContainer/LinkContainer'
 
 const UploadContainer = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
   const [initial, setInitial] = useState(true);
+  const [url, setUrl] = useState('');
 
   // allowed file types. change later
   const types = ["image/png", "image/jpeg"];
@@ -27,7 +29,6 @@ const UploadContainer = () => {
     if (initial) {
       return <div className={styles.fileInstruction}>Upload a file</div>;
     }
-
     return file ? (
         <div className={styles.fileName}>{file.name}</div>
     ) : (
@@ -41,6 +42,7 @@ const UploadContainer = () => {
         <ProgressBar
           file={file}
           setFile={setFile}
+          setUrl={setUrl}
         />
       </div>
     );
@@ -56,7 +58,7 @@ const UploadContainer = () => {
         <div className={styles.output}>{renderOutput()}</div>
       </div>
       {file && renderProgress()}
-      {/* {renderProgress()} */}
+      {/* <LinkContainer url={url}/> */}
     </section>
   );
 };
