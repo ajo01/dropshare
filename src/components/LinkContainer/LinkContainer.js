@@ -7,7 +7,7 @@ const LinkContainer = ({url}) => {
             <label>Link expires in 24 hours</label>
             <br/>
             <div className={styles.linkContainer}>
-            <label id="fileURL">URL insert</label>
+            <label id="fileURL">{url} </label>
             </div>
         </div>
     )

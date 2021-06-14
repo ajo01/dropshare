@@ -3,6 +3,10 @@
 :root {
   --main-bg-color: #eff5fe;
   --container-width: 500px;
+
+  --border-color: #0288d147;
+  --sub-color: #2196f3;
+  --error: #ff4a4a;
 }
 
 body,

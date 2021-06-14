@@ -1,5 +1,6 @@
 .container{
     text-align: center;
+    color: grey;
 }
 
 .linkContainer{
@@ -9,5 +10,4 @@
   margin-bottom: 20px;
   border-radius: 10px;
   border: 2px dashed var(--border-color);
-  color: grey;
 }
