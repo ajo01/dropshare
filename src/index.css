@@ -42,8 +42,5 @@ html, .main {
 .toast-div{
   position: absolute;
   z-index: 3;
-  bottom: 40px;
-
-  /* transform: translateY(40px); */
-  transition: transform ease-in-out 0.4s;
+  
 }
