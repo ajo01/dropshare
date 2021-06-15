@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./LinkContainer.module.css";
 import copyIcon from "../../img/copy-icon.svg";
-import TinyURL from "tinyurl";
+import useSignedUrl from '../../hooks/useSignedUrl'
 
-const LinkContainer = ({ url, setShowToast }) => {
-  // TinyURL.shorten(url).then(function(res) {
-  //     console.log(res)
-  // }, function(err) {
-  //     console.log(err)
-  // })
+const LinkContainer = ({ url, setShowToast, file }) => {
+  
+  // default expiry date is 1 day later
+  // const date = new Date();
+  // const expiryOneDayLater = date.setDate(date.getDate() + 1)
+
+  // const {signedUrl} = useSignedUrl(file)
+  // console.log('linkcontainer ' + signedUrl)
 
   const copyHandler = () => {
     navigator.clipboard.writeText(url);

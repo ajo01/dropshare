@@ -11,6 +11,7 @@ npm start
 
 TODO:
 onclick toast disappears
+google cloud storage
 expiry date
 use url shortener
 
