@@ -1,14 +1,20 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from "./LinkContainer.module.css";
 import copyIcon from "../../img/copy-icon.svg";
 import TinyURL from "tinyurl";
 
-const LinkContainer = ({ url }) => {
+const LinkContainer = ({ url, setShowToast }) => {
+
     TinyURL.shorten(url).then(function(res) {
         console.log(res)
     }, function(err) {
         console.log(err)
     })
+
+    const copyHandler = () => {
+      navigator.clipboard.writeText(url)
+      setShowToast(true)
+    }
 
   return (
     <div className={styles.container}>
@@ -16,7 +22,7 @@ const LinkContainer = ({ url }) => {
       <br />
       <div className={styles.linkContainer}>
         <label>{url}</label>
-        <img src={copyIcon} alt="copy-icon" onClick={() => {navigator.clipboard.writeText(url)}}></img>
+        <img src={copyIcon} alt="copy-icon" onClick={copyHandler}></img>
       </div>
     </div>
   );

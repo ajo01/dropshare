@@ -3,7 +3,7 @@ import styles from "./UploadContainer.module.css";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import LinkContainer from '../LinkContainer/LinkContainer'
 
-const UploadContainer = () => {
+const UploadContainer = ({setShowToast}) => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
   const [initial, setInitial] = useState(true);
@@ -26,9 +26,7 @@ const UploadContainer = () => {
   };
 
   const renderOutput = () => {
-    if (initial) {
-      return <div className={styles.fileInstruction}>Upload a file</div>;
-    }
+    if (initial) return <div className={styles.fileInstruction}>Upload a file</div>;
     return file ? (
         <div className={styles.fileName}>{file.name}</div>
     ) : (
@@ -58,7 +56,7 @@ const UploadContainer = () => {
         <div className={styles.output}>{renderOutput()}</div>
       </div>
       {file && renderProgress()}
-      {url &&  <LinkContainer url={url}/>}
+      {url &&  <LinkContainer url={url} setShow={setShowToast}/>}
     </section>
   );
 };

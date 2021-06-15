@@ -10,7 +10,7 @@
 }
 
 body,
-html {
+html, .main {
   background: var(--main-bg-color);
   display: flex;
   align-items: center;
@@ -21,7 +21,6 @@ html {
 }
 
 .center {
-  margin-top: 0;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,5 +36,14 @@ html {
   z-index: -2;
 
   bottom: 10px;
-  right: 30px;
+  right: 40px;
+}
+
+.toast-div{
+  position: absolute;
+  z-index: 3;
+  bottom: 40px;
+
+  /* transform: translateY(50px); */
+  transition: transform ease-in-out 0.4s;
 }
