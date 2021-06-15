@@ -9,11 +9,11 @@ function App() {
   return (
     <div className="main">
       <div className="center">
-        <UploadContainer className="upload-box" setShow={setShowToast}/>
+        <UploadContainer className="upload-box" setShowToast={setShowToast}/>
       </div>
       <img className="background-image" src={BackgroundImg} alt="background"></img>
       <div className="toast-div">
-      <ToastAlert/>
+      {showToast && <ToastAlert/>}
       </div>
     </div>
   );

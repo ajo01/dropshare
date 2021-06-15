@@ -4,17 +4,16 @@ import copyIcon from "../../img/copy-icon.svg";
 import TinyURL from "tinyurl";
 
 const LinkContainer = ({ url, setShowToast }) => {
+  // TinyURL.shorten(url).then(function(res) {
+  //     console.log(res)
+  // }, function(err) {
+  //     console.log(err)
+  // })
 
-    TinyURL.shorten(url).then(function(res) {
-        console.log(res)
-    }, function(err) {
-        console.log(err)
-    })
-
-    const copyHandler = () => {
-      navigator.clipboard.writeText(url)
-      setShowToast(true)
-    }
+  const copyHandler = () => {
+    navigator.clipboard.writeText(url);
+    setShowToast(true);
+  };
 
   return (
     <div className={styles.container}>

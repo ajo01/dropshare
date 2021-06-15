@@ -56,7 +56,7 @@ const UploadContainer = ({setShowToast}) => {
         <div className={styles.output}>{renderOutput()}</div>
       </div>
       {file && renderProgress()}
-      {url &&  <LinkContainer url={url} setShow={setShowToast}/>}
+      {url &&  <LinkContainer url={url} setShowToast={setShowToast}/>}
     </section>
   );
 };
