@@ -6,8 +6,15 @@ import ToastAlert from './components/Toast/ToastAlert'
 function App() {
     const [showToast, setShowToast] = useState(false)
 
+    // if user clicks, get rid of toast alert
+    const handleClick = () => {
+        const isToastOn = showToast
+        if (isToastOn) setShowToast(false)
+    }
+
   return (
-    <div className="main">
+    <div className="entire-page" onClick={handleClick}>
+        <div className="main">
       <div className="center">
         <UploadContainer className="upload-box" setShowToast={setShowToast}/>
       </div>
@@ -15,6 +22,7 @@ function App() {
       <div className="toast-div">
       {showToast && <ToastAlert/>}
       </div>
+    </div>
     </div>
   );
 }

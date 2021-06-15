@@ -10,7 +10,6 @@ npm start
 
 
 TODO:
-toast alert
 onclick toast disappears
 expiry date
 use url shortener

@@ -20,6 +20,14 @@ html, .main {
   
 }
 
+.entire-page{
+  margin: 0;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100vh;
+}
+
 .center {
   position: absolute;
   top: 50%;
