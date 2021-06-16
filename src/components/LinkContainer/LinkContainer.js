@@ -5,12 +5,8 @@ import useSignedUrl from '../../hooks/useSignedUrl'
 
 const LinkContainer = ({ url, setShowToast, file }) => {
   
-  // default expiry date is 1 day later
-  // const date = new Date();
-  // const expiryOneDayLater = date.setDate(date.getDate() + 1)
-
-  // const {signedUrl} = useSignedUrl(file)
-  // console.log('linkcontainer ' + signedUrl)
+  const {signedUrl} = useSignedUrl(file)
+  console.log('linkcontainer ' + signedUrl)
 
   const copyHandler = () => {
     navigator.clipboard.writeText(url);

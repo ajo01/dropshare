@@ -1,33 +1,39 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 // import TinyURL from "tinyurl";
-import gcs from "@google-cloud/storage";
+// import admin from "firebase-admin";
+
+const {Storage} = require('@google-cloud/storage');
+
 
 const useSignedUrl = (file) => {
   const [signedUrl, setSignedUrl] = useState("");
-  const expiryDate = Date.now() + 1000 * 60 * 60 * 24 // 24 hours
+  const expiryDate = Date.now() + 1000 * 60 * 60 * 24; // 24 hours
+  const storage = new Storage();
+  const fileName = file.name
+  const bucketName = 'dropshare-4007c.appspot.com'
 
-  useEffect(() => {
-    const bucketName = 'dropshare-project-2021'
-    const fileName = file.name;
-
-    const bucket = gcs.bucket(bucketName);
-    const file = bucket.file(fileName);
-    return file.getSignedUrl({
+  async function generateSignedUrl() {
+    // These options will allow temporary read access to the file
+    const options = {
+      version: 'v2', // defaults to 'v2' if missing.
       action: 'read',
       expires: expiryDate,
-    }).then(signedUrls => {
-      // signedUrls[0] contains the file's public URL
-      setSignedUrl(signedUrls[0] )
-    });
+    };
 
-  }, [file]);
-  return signedUrl;
+    // Get a v2 signed URL for the file
+    const [url] = await storage
+      .bucket(bucketName)
+      .file(fileName)
+      .getSignedUrl(options);
 
-  // TinyURL.shorten(url).then(function(res) {
-  //     console.log(res)
-  // }, function(err) {
-  //     console.log(err)
-  // })
+    console.log(`The signed url for ${fileName} is ${url}.`);
+    setSignedUrl(url)
+    return signedUrl
+  }
+
+  generateSignedUrl().catch(console.error);
+
+
 };
 
 export default useSignedUrl;
