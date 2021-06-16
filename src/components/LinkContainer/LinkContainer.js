@@ -1,13 +1,10 @@
 import React from "react";
 import styles from "./LinkContainer.module.css";
 import copyIcon from "../../img/copy-icon.svg";
-import useSignedUrl from '../../hooks/useSignedUrl'
+
 
 const LinkContainer = ({ url, setShowToast, file }) => {
   
-  const {signedUrl} = useSignedUrl(file)
-  console.log('linkcontainer ' + signedUrl)
-
   const copyHandler = () => {
     navigator.clipboard.writeText(url);
     setShowToast(true);
